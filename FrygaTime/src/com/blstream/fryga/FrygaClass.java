@@ -10,7 +10,7 @@ public class FrygaClass {
     private int hours;
     private int minutes;
     private int seconds;
-    private StringBuffer onFrygaTime;
+    private StringBuilder onFrygaTime;
 
     /**
      * Creating a instance of fryga with parametr as a time
@@ -18,11 +18,11 @@ public class FrygaClass {
      */
     public FrygaClass(String time){
         String parts[] = time.split(":");
-        this.onFrygaTime = new StringBuffer();
+        this.onFrygaTime = new StringBuilder();
         this.hours = Integer.parseInt(parts[0]);
         this.minutes = Integer.parseInt(parts[1]);
         this.seconds = Integer.parseInt(parts[2]);
-    };
+    }
 
     private void setSecounds(){
         if(seconds % 2 != 1)
@@ -38,7 +38,7 @@ public class FrygaClass {
     private void setHours(){
         int firstRow = hours / 5;
         int secondRow = hours % 5;
-        StringBuffer oneHoursBuffer = new StringBuffer();
+        StringBuilder oneHoursBuffer = new StringBuilder();
         oneHoursBuffer.append(" ");
 
         for(int i = 1; i<= 4 ;i++)
@@ -52,7 +52,8 @@ public class FrygaClass {
             else
                 oneHoursBuffer.append("O");
         }
-        this.onFrygaTime.append(oneHoursBuffer.toString() + " ");
+        this.onFrygaTime.append(oneHoursBuffer.toString());
+        this.onFrygaTime.append(" ");
     }
     private void setMinutes() {
         String[] minutesArray = new String[11];
@@ -68,7 +69,8 @@ public class FrygaClass {
             if (i % 3 == 0 && i <= howManyQuarter * 3 && i > 0)
                 minutesArray[i -1] = "R";
         }
-        this.onFrygaTime.append(getStringFromArray(minutesArray) + " ");
+        this.onFrygaTime.append(getStringFromArray(minutesArray));
+        this.onFrygaTime.append(" ");
         for (int i = 1; i <=4; i++) {
             if (i <= restMinutes && restMinutes != 0)
                 this.onFrygaTime.append("Y");

@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ *
  * Created by user on 02.03.2016.
  */
 public class FrygaClassTest {
