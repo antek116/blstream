@@ -8,8 +8,7 @@ public class Main {
 
     public static void main(String [] args)
     {
-        FrygaClass frygaTime = new FrygaClass("13:17:01");
+        FrygaClass frygaTime = new FrygaClass(args[0]);
         System.out.println(frygaTime.getFrygaTime());
-
     }
 }
