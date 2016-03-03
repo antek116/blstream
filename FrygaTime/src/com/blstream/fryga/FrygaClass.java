@@ -8,6 +8,13 @@ import org.jetbrains.annotations.NotNull;
 
 public class FrygaClass {
 
+    static String redColor = "R";
+    static String yellowColor = "Y";
+    static String turnedOffColor ="O";
+    static int eachRedRowSize = 4;
+    static int fiveMinutesArraySize = 11;
+
+
     private int hours;
     private int minutes;
     private int seconds;
@@ -40,11 +47,11 @@ public class FrygaClass {
     protected String appendSecounds(){
         if(seconds % 2 != 1)
         {
-            this.onFrygaTime.append("O");
+            this.onFrygaTime.append(turnedOffColor);
         }
         else
         {
-            this.onFrygaTime.append("Y");
+            this.onFrygaTime.append(yellowColor);
         }
         onFrygaTime.append(" ");
         return onFrygaTime.toString();
@@ -55,41 +62,41 @@ public class FrygaClass {
         StringBuilder oneHoursBuffer = new StringBuilder();
         oneHoursBuffer.append(" ");
 
-        for(int i = 1; i<= 4 ;i++)
+        for(int i = 1; i<= eachRedRowSize ;i++)
         {
             if(i <= firstRow && firstRow != 0){
-                this.onFrygaTime.append("R");}
+                this.onFrygaTime.append(redColor);}
             else{
-                this.onFrygaTime.append("O");}
+                this.onFrygaTime.append(turnedOffColor);}
             if(i <= secondRow && secondRow !=0){
-                oneHoursBuffer.append("R");}
+                oneHoursBuffer.append(redColor);}
             else{
-                oneHoursBuffer.append("O");}
+                oneHoursBuffer.append(turnedOffColor);}
         }
         this.onFrygaTime.append(oneHoursBuffer.toString());
         this.onFrygaTime.append(" ");
     }
     private void appendMinutes() {
-        String[] minutesArray = new String[11];
+        String[] minutesArray = new String[fiveMinutesArraySize];
         int howManyQuarter = minutes / 15;
         int howManyFives = minutes / 5;
         int restMinutes = minutes % 5;
 
         for (int i = 0; i < minutesArray.length; i++) {
             if (i < howManyFives)
-                minutesArray[i] = "Y";
+                minutesArray[i] = redColor;
             else
-                minutesArray[i] = "O";
+                minutesArray[i] = turnedOffColor;
             if (i % 3 == 0 && i <= howManyQuarter * 3 && i > 0)
-                minutesArray[i -1] = "R";
+                minutesArray[i -1] = redColor;
         }
         this.onFrygaTime.append(getStringFromArray(minutesArray));
         this.onFrygaTime.append(" ");
         for (int i = 1; i <=4; i++) {
             if (i <= restMinutes && restMinutes != 0)
-                this.onFrygaTime.append("Y");
+                this.onFrygaTime.append(yellowColor);
             else
-                this.onFrygaTime.append("O");
+                this.onFrygaTime.append(turnedOffColor);
         }
     }
 

@@ -2,14 +2,8 @@ package com.blstream.fryga;
 
 import org.junit.Test;
 
-import java.util.concurrent.ExecutionException;
-
 import static org.junit.Assert.*;
 
-/**
- *
- * Created by user on 02.03.2016.
- */
 public class FrygaClassTest {
 
     @Test
