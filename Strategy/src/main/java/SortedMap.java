@@ -13,11 +13,11 @@ public class SortedMap<KeyType,ValueType> extends HashMap<KeyType,ValueType>
         return null;
     }
 
-    public void switchElements(ElementClass mFirstElement, ElementClass mSecoundElement)
-    {
-        if(mFirstElement != this.firstElement)
-        {
-
-        }
-    }
+//    public void switchElements(ElementClass mFirstElement, ElementClass mSecoundElement)
+//    {
+//        if(mFirstElement != this.firstElement)
+//        {
+//
+//        }
+//    }
 }

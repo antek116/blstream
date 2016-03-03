@@ -1,59 +1,72 @@
 /**
  *
- * Created by user on 03.03.2016.
+ * Class used to implements Elements of hashMap
  */
 public class ElementClass<TypeKey,TypeValue> implements IElement<TypeKey,TypeValue> {
 
-    TypeKey key;
-    TypeValue value;
-    ElementClass nextElement;
-    ElementClass previousElement;
+    private TypeKey key;
+    private Object value;
+    private ElementClass nextElement;
 
     ElementClass(TypeKey key,TypeValue value)
     {
         this.key = key;
         this.value = value;
         this.nextElement = null;
-        this.previousElement = null;
     }
 
-    ElementClass(TypeKey key,TypeValue value,ElementClass previous){
-        this.key = key;
-        this.value = value;
-        this.previousElement = previous;
-        this.nextElement = null;}
-
+    /**
+     * Method returning key of element
+     * @return Returning Key of element.
+     */
     @Override
     public TypeKey getKey() {
         return this.key;
     }
 
+    /**
+     * Method return value of element.
+     * @return return value of element.
+     */
     @Override
-    public TypeValue getValue() {
+    public Object getValue() {
         return this.value;
     }
-
+//    /**
+//     * No used yet.
+//     * @param key
+//     * @return
+//     */
+//    @Override
+//    public boolean setKey(TypeKey key) {
+//        this.key = key;
+//        return true;
+//    }
+    /**
+     * Method setValue to element.
+     * @param value value of element;
+     * @return return true if value was set;
+     */
     @Override
-    public boolean setKey(TypeKey key) {
-        this.key = key;
-        return true;
-    }
-
-    @Override
-    public boolean setValue(TypeValue value) {
+    public boolean setValue(Object value) {
         this.value = value;
         return true;
     }
 
+    /**
+     * Method set next Element as children to Element.
+     * @param next Reference to next element;
+     */
     public void setNextElement(ElementClass next)
     {
         this.nextElement = next;
     }
-    public void setPreviousElement(ElementClass previous)
-    {
-        this.previousElement = previous;
-    }
+
+    /**
+     *     /**
+     * Method return next Element as children to Element.
+     * @return child of element.
+     */
     public ElementClass getNextElement(){return this.nextElement;}
-    public ElementClass getPreviousElement(){return this.previousElement;}
 
 }
