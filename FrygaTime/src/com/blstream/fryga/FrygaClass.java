@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 /**
 *Represent a class of Time on Fryga
  */
+
 public class FrygaClass {
 
     private int hours;
@@ -23,19 +24,32 @@ public class FrygaClass {
         this.minutes = Integer.parseInt(parts[1]);
         this.seconds = Integer.parseInt(parts[2]);
     }
+    /**
+     * Get the time on a Fryga
+     * @return Return time in special format as a String;
+     */
+    public String getFrygaTime(){
 
-    private void setSecounds(){
+        appendSecounds();
+        appendHours();
+        appendMinutes();
+
+        return this.onFrygaTime.toString();
+    }
+
+    protected String appendSecounds(){
         if(seconds % 2 != 1)
         {
-            this.onFrygaTime.append("Y ");
+            this.onFrygaTime.append("O");
         }
         else
         {
-            this.onFrygaTime.append("O ");
+            this.onFrygaTime.append("Y");
         }
-
+        onFrygaTime.append(" ");
+        return onFrygaTime.toString();
     }
-    private void setHours(){
+    private void appendHours(){
         int firstRow = hours / 5;
         int secondRow = hours % 5;
         StringBuilder oneHoursBuffer = new StringBuilder();
@@ -43,19 +57,19 @@ public class FrygaClass {
 
         for(int i = 1; i<= 4 ;i++)
         {
-            if(i <= firstRow && firstRow != 0)
-                this.onFrygaTime.append("R");
-            else
-                this.onFrygaTime.append("O");
-            if(i <= secondRow && secondRow !=0)
-                oneHoursBuffer.append("R");
-            else
-                oneHoursBuffer.append("O");
+            if(i <= firstRow && firstRow != 0){
+                this.onFrygaTime.append("R");}
+            else{
+                this.onFrygaTime.append("O");}
+            if(i <= secondRow && secondRow !=0){
+                oneHoursBuffer.append("R");}
+            else{
+                oneHoursBuffer.append("O");}
         }
         this.onFrygaTime.append(oneHoursBuffer.toString());
         this.onFrygaTime.append(" ");
     }
-    private void setMinutes() {
+    private void appendMinutes() {
         String[] minutesArray = new String[11];
         int howManyQuarter = minutes / 15;
         int howManyFives = minutes / 5;
@@ -87,19 +101,6 @@ public class FrygaClass {
             builder.append(s);
         }
         return builder.toString();
-    }
-
-    /**
-     * Get the time on a Fryga
-     * @return Return time in special format as a String;
-     */
-    public String getFrygaTime(){
-
-        setSecounds();
-        setHours();
-        setMinutes();
-
-        return this.onFrygaTime.toString();
     }
 
 }

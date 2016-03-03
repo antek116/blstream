@@ -2,6 +2,8 @@ package com.blstream.fryga;
 
 import org.junit.Test;
 
+import java.util.concurrent.ExecutionException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -22,4 +24,15 @@ public class FrygaClassTest {
         FrygaClass frygaTest3 = new FrygaClass("24:00:00");
         assertEquals("Y RRRR RRRR OOOOOOOOOOO OOOO", frygaTest3.getFrygaTime());
     }
+    @Test
+    public void shouldReturnYellowAndSpace() throws Exception{
+        FrygaClass frygaTest =  new FrygaClass("00:00:00");
+        assertEquals("Y ",frygaTest.appendSecounds());
+    }
+    @Test
+    public void shouldReturnOffAndSpace() throws Exception{
+        FrygaClass frygaTest =  new FrygaClass("00:00:01");
+        assertEquals("O ",frygaTest.appendSecounds());
+    }
+
 }
