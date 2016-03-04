@@ -4,10 +4,30 @@
  */
 public interface IElement<TypeKey,TypeValue> {
 
+    /**
+     *  Method return key of element.
+     * @return return key of element.
+     */
+    TypeKey getKey();
 
-    public TypeKey getKey();
-    public TypeValue getValue();
-    public boolean setKey(TypeKey key);
-    public boolean setValue(TypeValue value);
+    /**
+     * Method return value of element.
+     * @return return value of element.
+     */
+    Object getValue();
+
+//    /**
+//     *
+//     * @param key
+//     * @return
+//     */
+//    boolean setKey(TypeKey key);
+
+    /**
+     * Method setValue to element.
+     * @param value value of element;
+     * @return return true if value was set;
+     */
+    boolean setValue(TypeValue value);
 
 }
