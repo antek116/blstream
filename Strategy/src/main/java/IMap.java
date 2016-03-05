@@ -16,7 +16,7 @@ public interface IMap<KeyType,ValueType>{
      * @return the value to which the specified key is mapped,
      * or null if this map contains no mapping for the key
      */
-    Object get(KeyType key);
+    abstract ValueType get(KeyType key);
 
     /**
      * Returns true if this map contains no key-value mappings.

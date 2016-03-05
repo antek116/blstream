@@ -5,7 +5,7 @@
 public class Main{
 
     public static void main(String[] args) {
-        HashMap<String, Integer> map = new HashMap<String,Integer>();
+        HashMap<String, Integer> map = new MyHashMap();
 
         map.put("BlaBla",1);
         map.put("BlaBla1",2);

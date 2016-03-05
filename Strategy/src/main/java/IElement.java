@@ -14,7 +14,7 @@ public interface IElement<TypeKey,TypeValue> {
      * Method return value of element.
      * @return return value of element.
      */
-    Object getValue();
+    TypeValue getValue();
 
 //    /**
 //     *

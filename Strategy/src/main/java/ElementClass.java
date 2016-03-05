@@ -5,7 +5,7 @@
 public class ElementClass<TypeKey,TypeValue> implements IElement<TypeKey,TypeValue> {
 
     private TypeKey key;
-    private Object value;
+    private TypeValue value;
     private ElementClass nextElement;
 
     ElementClass(TypeKey key,TypeValue value)
@@ -25,11 +25,11 @@ public class ElementClass<TypeKey,TypeValue> implements IElement<TypeKey,TypeVal
     }
 
     /**
-     * Method return value of element.
-     * @return return value of element.
+     *
+     * @return  value of element.
      */
     @Override
-    public Object getValue() {
+    public TypeValue getValue() {
         return this.value;
     }
 //    /**
@@ -45,10 +45,10 @@ public class ElementClass<TypeKey,TypeValue> implements IElement<TypeKey,TypeVal
     /**
      * Method setValue to element.
      * @param value value of element;
-     * @return return true if value was set;
+     * @return  true if value was set;
      */
     @Override
-    public boolean setValue(Object value) {
+    public boolean setValue(TypeValue value) {
         this.value = value;
         return true;
     }
